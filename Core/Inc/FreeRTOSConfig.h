@@ -93,9 +93,6 @@
 #define configTIMER_QUEUE_LENGTH                 10
 #define configTIMER_TASK_STACK_DEPTH             256
 
-/* The following flag must be enabled only when using newlib */
-#define configUSE_NEWLIB_REENTRANT          1
-
 /* CMSIS-RTOS V2 flags */
 #define configUSE_OS2_THREAD_SUSPEND_RESUME  1
 #define configUSE_OS2_THREAD_ENUMERATE       1
@@ -167,7 +164,7 @@ standard names. */
 #define USE_CUSTOM_SYSTICK_HANDLER_IMPLEMENTATION 0
 
 /* USER CODE BEGIN Defines */
-/* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
+#include "trcRecorder.h"
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */
