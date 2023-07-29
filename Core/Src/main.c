@@ -56,6 +56,13 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for myTask02 */
+osThreadId_t myTask02Handle;
+const osThreadAttr_t myTask02_attributes = {
+  .name = "myTask02",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -68,6 +75,7 @@ static void MX_I2S3_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USB_OTG_FS_HCD_Init(void);
 void StartDefaultTask(void *argument);
+void StartTask02(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -112,7 +120,6 @@ int main(void)
   MX_USB_OTG_FS_HCD_Init();
   /* USER CODE BEGIN 2 */
     vTraceEnable(TRC_START);
-//  Trace_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -137,6 +144,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of myTask02 */
+  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -456,15 +466,37 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-    osDelay(5);
+	  osDelay(5);
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-  osDelay(5);
-  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-osDelay(5);
-HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-osDelay(5);
+	  osDelay(5);
+	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+	  osDelay(5);
+	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+	  osDelay(5);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the myTask02 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void *argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+  int count = 0;
+  traceString counter = xTraceRegisterString("Counter");
+  /* Infinite loop */
+  for(;;)
+  {
+	  count++;
+	  vTracePrintF(counter, "Count is: %d", count);
+//	  osDelay(1);
+  }
+  /* USER CODE END StartTask02 */
 }
 
 /**
