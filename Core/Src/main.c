@@ -111,8 +111,7 @@ int main(void)
   MX_SPI1_Init();
   MX_USB_OTG_FS_HCD_Init();
   /* USER CODE BEGIN 2 */
-    vTraceEnable(TRC_START);
-//  Trace_Init();
+  vTraceEnable(TRC_START);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -455,14 +454,8 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
     osDelay(5);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-  osDelay(5);
-  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-osDelay(5);
-HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-osDelay(5);
   }
   /* USER CODE END 5 */
 }
