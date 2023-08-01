@@ -57,10 +57,13 @@ trcSnapshotRecorder.c:2596:6:vTraceSetFrequency	1
 trcSnapshotRecorder.c:2617:6:prvTraceError	4
 trcSnapshotRecorder.c:2637:6:vTraceSetFilterMask	1
 trcSnapshotRecorder.c:2642:6:vTraceSetFilterGroup	1
+trcSnapshotRecorder.c:2663:6:prvCheckDataToBeOverwrittenForMultiEntryEvents	7
 trcSnapshotRecorder.c:2708:6:prvTraceUpdateCounters	3
 trcSnapshotRecorder.c:2744:10:prvTraceGetDTS	11
 trcSnapshotRecorder.c:2862:21:prvTraceLookupSymbolTableEntry	6
 trcSnapshotRecorder.c:2905:21:prvTraceCreateSymbolTableEntry	2
 trcSnapshotRecorder.c:2966:6:prvTraceGetChecksum	3
+trcSnapshotRecorder.c:3002:13:prvTraceStoreXID	2
+trcSnapshotRecorder.c:3021:16:prvTraceGet8BitHandle	2
 trcSnapshotRecorder.c:3038:6:xTraceHardwarePortInitCortexM	3
 trcSnapshotRecorder.c:3103:6:prvTracePortGetTimeStamp	4

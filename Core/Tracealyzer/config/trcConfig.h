@@ -157,7 +157,7 @@ extern "C" {
  *
  * Default value is 10.
  */
-#define TRC_CFG_STACK_MONITOR_MAX_TASKS 10
+#define TRC_CFG_STACK_MONITOR_MAX_TASKS 100
 
 /**
  * @def TRC_CFG_STACK_MONITOR_MAX_REPORTS

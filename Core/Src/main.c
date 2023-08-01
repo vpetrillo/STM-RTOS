@@ -54,9 +54,144 @@ osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask02 */
+osThreadId_t myTask02Handle;
+const osThreadAttr_t myTask02_attributes = {
+  .name = "myTask02",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask03 */
+osThreadId_t myTask03Handle;
+const osThreadAttr_t myTask03_attributes = {
+  .name = "myTask03",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask04 */
+osThreadId_t myTask04Handle;
+const osThreadAttr_t myTask04_attributes = {
+  .name = "myTask04",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask05 */
+osThreadId_t myTask05Handle;
+const osThreadAttr_t myTask05_attributes = {
+  .name = "myTask05",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask06 */
+osThreadId_t myTask06Handle;
+const osThreadAttr_t myTask06_attributes = {
+  .name = "myTask06",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask07 */
+osThreadId_t myTask07Handle;
+const osThreadAttr_t myTask07_attributes = {
+  .name = "myTask07",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask08 */
+osThreadId_t myTask08Handle;
+const osThreadAttr_t myTask08_attributes = {
+  .name = "myTask08",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask09 */
+osThreadId_t myTask09Handle;
+const osThreadAttr_t myTask09_attributes = {
+  .name = "myTask09",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask10 */
+osThreadId_t myTask10Handle;
+const osThreadAttr_t myTask10_attributes = {
+  .name = "myTask10",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask11 */
+osThreadId_t myTask11Handle;
+const osThreadAttr_t myTask11_attributes = {
+  .name = "myTask11",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask12 */
+osThreadId_t myTask12Handle;
+const osThreadAttr_t myTask12_attributes = {
+  .name = "myTask12",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask13 */
+osThreadId_t myTask13Handle;
+const osThreadAttr_t myTask13_attributes = {
+  .name = "myTask13",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask14 */
+osThreadId_t myTask14Handle;
+const osThreadAttr_t myTask14_attributes = {
+  .name = "myTask14",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask15 */
+osThreadId_t myTask15Handle;
+const osThreadAttr_t myTask15_attributes = {
+  .name = "myTask15",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask16 */
+osThreadId_t myTask16Handle;
+const osThreadAttr_t myTask16_attributes = {
+  .name = "myTask16",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask17 */
+osThreadId_t myTask17Handle;
+const osThreadAttr_t myTask17_attributes = {
+  .name = "myTask17",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask18 */
+osThreadId_t myTask18Handle;
+const osThreadAttr_t myTask18_attributes = {
+  .name = "myTask18",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask19 */
+osThreadId_t myTask19Handle;
+const osThreadAttr_t myTask19_attributes = {
+  .name = "myTask19",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask20 */
+osThreadId_t myTask20Handle;
+const osThreadAttr_t myTask20_attributes = {
+  .name = "myTask20",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 /* USER CODE BEGIN PV */
+
+int count = 0;
 
 /* USER CODE END PV */
 
@@ -68,6 +203,25 @@ static void MX_I2S3_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USB_OTG_FS_HCD_Init(void);
 void StartDefaultTask(void *argument);
+void StartTask02(void *argument);
+void StartTask03(void *argument);
+void StartTask04(void *argument);
+void StartTask05(void *argument);
+void StartTask06(void *argument);
+void StartTask07(void *argument);
+void StartTask08(void *argument);
+void StartTask09(void *argument);
+void StartTask10(void *argument);
+void StartTask11(void *argument);
+void StartTask12(void *argument);
+void StartTask13(void *argument);
+void StartTask14(void *argument);
+void StartTask15(void *argument);
+void StartTask16(void *argument);
+void StartTask17(void *argument);
+void StartTask18(void *argument);
+void StartTask19(void *argument);
+void StartTask20(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -136,6 +290,63 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of myTask02 */
+  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
+
+  /* creation of myTask03 */
+  myTask03Handle = osThreadNew(StartTask03, NULL, &myTask03_attributes);
+
+  /* creation of myTask04 */
+  myTask04Handle = osThreadNew(StartTask04, NULL, &myTask04_attributes);
+
+  /* creation of myTask05 */
+  myTask05Handle = osThreadNew(StartTask05, NULL, &myTask05_attributes);
+
+  /* creation of myTask06 */
+  myTask06Handle = osThreadNew(StartTask06, NULL, &myTask06_attributes);
+
+  /* creation of myTask07 */
+  myTask07Handle = osThreadNew(StartTask07, NULL, &myTask07_attributes);
+
+  /* creation of myTask08 */
+  myTask08Handle = osThreadNew(StartTask08, NULL, &myTask08_attributes);
+
+  /* creation of myTask09 */
+  myTask09Handle = osThreadNew(StartTask09, NULL, &myTask09_attributes);
+
+  /* creation of myTask10 */
+  myTask10Handle = osThreadNew(StartTask10, NULL, &myTask10_attributes);
+
+  /* creation of myTask11 */
+  myTask11Handle = osThreadNew(StartTask11, NULL, &myTask11_attributes);
+
+  /* creation of myTask12 */
+  myTask12Handle = osThreadNew(StartTask12, NULL, &myTask12_attributes);
+
+  /* creation of myTask13 */
+  myTask13Handle = osThreadNew(StartTask13, NULL, &myTask13_attributes);
+
+  /* creation of myTask14 */
+  myTask14Handle = osThreadNew(StartTask14, NULL, &myTask14_attributes);
+
+  /* creation of myTask15 */
+  myTask15Handle = osThreadNew(StartTask15, NULL, &myTask15_attributes);
+
+  /* creation of myTask16 */
+  myTask16Handle = osThreadNew(StartTask16, NULL, &myTask16_attributes);
+
+  /* creation of myTask17 */
+  myTask17Handle = osThreadNew(StartTask17, NULL, &myTask17_attributes);
+
+  /* creation of myTask18 */
+  myTask18Handle = osThreadNew(StartTask18, NULL, &myTask18_attributes);
+
+  /* creation of myTask19 */
+  myTask19Handle = osThreadNew(StartTask19, NULL, &myTask19_attributes);
+
+  /* creation of myTask20 */
+  myTask20Handle = osThreadNew(StartTask20, NULL, &myTask20_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -451,13 +662,415 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
+	traceString counter_string = xTraceRegisterString("Task 1");
   /* Infinite loop */
   for(;;)
   {
     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-    osDelay(5);
+    vTracePrintF(counter_string, "Counter: %d", count);
+    count++;
+    osDelay(1);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the myTask02 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void *argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+	traceString counter_string = xTraceRegisterString("Task 2");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask02 */
+}
+
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the myTask03 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void *argument)
+{
+  /* USER CODE BEGIN StartTask03 */
+	traceString counter_string = xTraceRegisterString("Task 3");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask03 */
+}
+
+/* USER CODE BEGIN Header_StartTask04 */
+/**
+* @brief Function implementing the myTask04 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask04 */
+void StartTask04(void *argument)
+{
+  /* USER CODE BEGIN StartTask04 */
+	traceString counter_string = xTraceRegisterString("Task 4");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask04 */
+}
+
+/* USER CODE BEGIN Header_StartTask05 */
+/**
+* @brief Function implementing the myTask05 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask05 */
+void StartTask05(void *argument)
+{
+  /* USER CODE BEGIN StartTask05 */
+	traceString counter_string = xTraceRegisterString("Task 5");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask05 */
+}
+
+/* USER CODE BEGIN Header_StartTask06 */
+/**
+* @brief Function implementing the myTask06 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask06 */
+void StartTask06(void *argument)
+{
+  /* USER CODE BEGIN StartTask06 */
+	traceString counter_string = xTraceRegisterString("Task 6");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask06 */
+}
+
+/* USER CODE BEGIN Header_StartTask07 */
+/**
+* @brief Function implementing the myTask07 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask07 */
+void StartTask07(void *argument)
+{
+  /* USER CODE BEGIN StartTask07 */
+	traceString counter_string = xTraceRegisterString("Task 7");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask07 */
+}
+
+/* USER CODE BEGIN Header_StartTask08 */
+/**
+* @brief Function implementing the myTask08 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask08 */
+void StartTask08(void *argument)
+{
+  /* USER CODE BEGIN StartTask08 */
+	traceString counter_string = xTraceRegisterString("Task 8");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask08 */
+}
+
+/* USER CODE BEGIN Header_StartTask09 */
+/**
+* @brief Function implementing the myTask09 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask09 */
+void StartTask09(void *argument)
+{
+  /* USER CODE BEGIN StartTask09 */
+	traceString counter_string = xTraceRegisterString("Task 9");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask09 */
+}
+
+/* USER CODE BEGIN Header_StartTask10 */
+/**
+* @brief Function implementing the myTask10 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask10 */
+void StartTask10(void *argument)
+{
+  /* USER CODE BEGIN StartTask10 */
+	traceString counter_string = xTraceRegisterString("Task 10");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask10 */
+}
+
+/* USER CODE BEGIN Header_StartTask11 */
+/**
+* @brief Function implementing the myTask11 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask11 */
+void StartTask11(void *argument)
+{
+  /* USER CODE BEGIN StartTask11 */
+	traceString counter_string = xTraceRegisterString("Task 11");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask11 */
+}
+
+/* USER CODE BEGIN Header_StartTask12 */
+/**
+* @brief Function implementing the myTask12 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask12 */
+void StartTask12(void *argument)
+{
+  /* USER CODE BEGIN StartTask12 */
+	traceString counter_string = xTraceRegisterString("Task 12");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask12 */
+}
+
+/* USER CODE BEGIN Header_StartTask13 */
+/**
+* @brief Function implementing the myTask13 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask13 */
+void StartTask13(void *argument)
+{
+  /* USER CODE BEGIN StartTask13 */
+	traceString counter_string = xTraceRegisterString("Task 13");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask13 */
+}
+
+/* USER CODE BEGIN Header_StartTask14 */
+/**
+* @brief Function implementing the myTask14 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask14 */
+void StartTask14(void *argument)
+{
+  /* USER CODE BEGIN StartTask14 */
+	traceString counter_string = xTraceRegisterString("Task 14");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask14 */
+}
+
+/* USER CODE BEGIN Header_StartTask15 */
+/**
+* @brief Function implementing the myTask15 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask15 */
+void StartTask15(void *argument)
+{
+  /* USER CODE BEGIN StartTask15 */
+	traceString counter_string = xTraceRegisterString("Task 15");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask15 */
+}
+
+/* USER CODE BEGIN Header_StartTask16 */
+/**
+* @brief Function implementing the myTask16 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask16 */
+void StartTask16(void *argument)
+{
+  /* USER CODE BEGIN StartTask16 */
+	traceString counter_string = xTraceRegisterString("Task 16");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask16 */
+}
+
+/* USER CODE BEGIN Header_StartTask17 */
+/**
+* @brief Function implementing the myTask17 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask17 */
+void StartTask17(void *argument)
+{
+  /* USER CODE BEGIN StartTask17 */
+	traceString counter_string = xTraceRegisterString("Task 17");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask17 */
+}
+
+/* USER CODE BEGIN Header_StartTask18 */
+/**
+* @brief Function implementing the myTask18 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask18 */
+void StartTask18(void *argument)
+{
+  /* USER CODE BEGIN StartTask18 */
+	traceString counter_string = xTraceRegisterString("Task 18");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask18 */
+}
+
+/* USER CODE BEGIN Header_StartTask19 */
+/**
+* @brief Function implementing the myTask19 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask19 */
+void StartTask19(void *argument)
+{
+  /* USER CODE BEGIN StartTask19 */
+	traceString counter_string = xTraceRegisterString("Task 19");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask19 */
+}
+
+/* USER CODE BEGIN Header_StartTask20 */
+/**
+* @brief Function implementing the myTask20 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask20 */
+void StartTask20(void *argument)
+{
+  /* USER CODE BEGIN StartTask20 */
+	traceString counter_string = xTraceRegisterString("Task 20");
+  /* Infinite loop */
+  for(;;)
+  {
+	  vTracePrintF(counter_string, "Counter: %d", count);
+	  count++;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask20 */
 }
 
 /**

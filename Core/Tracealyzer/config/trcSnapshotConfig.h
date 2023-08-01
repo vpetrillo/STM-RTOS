@@ -33,7 +33,7 @@ extern "C" {
  * recording is stopped when the buffer becomes full. This is useful for
  * recording events following a specific state, e.g., the startup sequence.
  */
-#define TRC_CFG_SNAPSHOT_MODE TRC_SNAPSHOT_MODE_STOP_WHEN_FULL
+#define TRC_CFG_SNAPSHOT_MODE TRC_SNAPSHOT_MODE_RING_BUFFER
 
 /**
  * @def TRC_CFG_EVENT_BUFFER_SIZE
@@ -153,7 +153,7 @@ extern "C" {
  * the event buffer whenever the object is referenced. Moreover, some internal
  * tables in the recorder gets slightly larger when using 16-bit handles.
  */
-#define TRC_CFG_USE_16BIT_OBJECT_HANDLES 0
+#define TRC_CFG_USE_16BIT_OBJECT_HANDLES 1
 
 /**
  * @def TRC_CFG_USE_SEPARATE_USER_EVENT_BUFFER
