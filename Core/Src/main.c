@@ -54,7 +54,42 @@ osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
   .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
+};
+/* Definitions for myTask02 */
+osThreadId_t myTask02Handle;
+const osThreadAttr_t myTask02_attributes = {
+  .name = "myTask02",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for myTask03 */
+osThreadId_t myTask03Handle;
+const osThreadAttr_t myTask03_attributes = {
+  .name = "myTask03",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
+};
+/* Definitions for myTask04 */
+osThreadId_t myTask04Handle;
+const osThreadAttr_t myTask04_attributes = {
+  .name = "myTask04",
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for myTask05 */
+osThreadId_t myTask05Handle;
+const osThreadAttr_t myTask05_attributes = {
+  .name = "myTask05",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for myTask06 */
+osThreadId_t myTask06Handle;
+const osThreadAttr_t myTask06_attributes = {
+  .name = "myTask06",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
 
@@ -68,6 +103,11 @@ static void MX_I2S3_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USB_OTG_FS_HCD_Init(void);
 void StartDefaultTask(void *argument);
+void StartTask02(void *argument);
+void StartTask03(void *argument);
+void StartTask04(void *argument);
+void StartTask05(void *argument);
+void StartTask06(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -136,6 +176,21 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of myTask02 */
+  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
+
+  /* creation of myTask03 */
+  myTask03Handle = osThreadNew(StartTask03, NULL, &myTask03_attributes);
+
+  /* creation of myTask04 */
+  myTask04Handle = osThreadNew(StartTask04, NULL, &myTask04_attributes);
+
+  /* creation of myTask05 */
+  myTask05Handle = osThreadNew(StartTask05, NULL, &myTask05_attributes);
+
+  /* creation of myTask06 */
+  myTask06Handle = osThreadNew(StartTask06, NULL, &myTask06_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -458,6 +513,103 @@ void StartDefaultTask(void *argument)
     osDelay(5);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the myTask02 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void *argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    osDelay(5);
+  }
+  /* USER CODE END StartTask02 */
+}
+
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the myTask03 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void *argument)
+{
+  /* USER CODE BEGIN StartTask03 */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+	osDelay(5);
+  }
+  /* USER CODE END StartTask03 */
+}
+
+/* USER CODE BEGIN Header_StartTask04 */
+/**
+* @brief Function implementing the myTask04 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask04 */
+void StartTask04(void *argument)
+{
+  /* USER CODE BEGIN StartTask04 */
+  /* Infinite loop */
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+    osDelay(5);
+  }
+  /* USER CODE END StartTask04 */
+}
+
+/* USER CODE BEGIN Header_StartTask05 */
+/**
+* @brief Function implementing the myTask05 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask05 */
+void StartTask05(void *argument)
+{
+  /* USER CODE BEGIN StartTask05 */
+  /* Infinite loop */
+  float circumference = 0;
+  for(;;)
+  {
+	circumference = 5.0 * 3.1415926;
+    osDelay(5);
+  }
+  /* USER CODE END StartTask05 */
+}
+
+/* USER CODE BEGIN Header_StartTask06 */
+/**
+* @brief Function implementing the myTask06 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask06 */
+void StartTask06(void *argument)
+{
+  /* USER CODE BEGIN StartTask06 */
+  /* Infinite loop */
+  int number = 0;
+  for(;;)
+  {
+	number = 46340 * 46340;
+    osDelay(1);
+  }
+  /* USER CODE END StartTask06 */
 }
 
 /**
